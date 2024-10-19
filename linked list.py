@@ -8,7 +8,7 @@ class Node:
         return str(self.value)
 
 
-class Lista:
+class List:
     def __init__(self):
         self.head = None
         self.tail = None 
@@ -250,9 +250,6 @@ class Lista:
 
         return colcht1
 
-        
-        pass
-
     def merge(self, other_list): 
 
         if other_list.head is None:  
@@ -273,9 +270,7 @@ class Lista:
         atual = self.head
         prev_head = self.head  # Armazena o antigo head para se tornar o novo tail
         while atual is not None:
-            # Troca next e previous
             atual.next, atual.previous = atual.previous, atual.next
-            # Move para o próximo nó (que agora está em current.previous)
             atual = atual.previous
         
         # Após a inversão, troque head e tail
@@ -295,24 +290,3 @@ class Lista:
         return slow.value
 
 
-lista = Lista()
-lista.add(4)
-lista.add(3)
-lista.add(2)
-lista.add(66)
-lista.add(12)
-lista.add(0)
-lista.add(13)
-lista.add(6)
-
-lista.remove_value(3)
-lista.remove_value(12)
-lista.remove_value(0)
-
-print(lista)
-
-lista.remove_value(6)
-lista.remove_value(66)
-lista.remove_value(2)
-
-print(lista)
